@@ -44,7 +44,7 @@ public class User {
 	// @ColumnDefault("user")
 	// DB는 RoleType이라는 게 없다.
 	@Enumerated(EnumType.STRING)
-	private RoleType role; // Enum을 쓰는게 좋다. // ADMIN, USER
+	private RoleType role; // Enum을 쓰는게 좋다. // ADMIN, USER, CUSTOMER
 	
 	private String oauth; // kakao, google
 	

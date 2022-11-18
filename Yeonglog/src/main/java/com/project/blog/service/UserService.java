@@ -9,13 +9,14 @@ import com.project.blog.model.RoleType;
 import com.project.blog.model.User;
 import com.project.blog.repository.UserRepository;
 
-// 스프링이 컴포넌트 스캔을 통해서 Bean에 등록을 해줌. IoC를 해준다.
+//스프링이 컴포넌트 스캔을 통해서 Bean에 등록을 해줌 (IoC_메모리에 대신 띄워준다.)
 @Service
 public class UserService {
 
 	@Autowired
 	private UserRepository userRepository;
 
+	//비밀번호 암호화 저장
 	@Autowired
 	private BCryptPasswordEncoder encoder;
 
@@ -25,17 +26,17 @@ public class UserService {
 			return new User();
 		});
 		return user;
-	}
+	} //롤백 로직도 필요하면 추가하자
 	
-	@Transactional
+	@Transactional  //save
 	public int 회원가입(User user) {
 		String rawPassword = user.getPassword(); // 1234 원문
 		String encPassword = encoder.encode(rawPassword); // 해쉬
 		user.setPassword(encPassword);
-		user.setRole(RoleType.USER);
+		user.setRole(RoleType.USER); //이 부분 admin으로 저장도 필요함
 		try {
 			userRepository.save(user);
-			return 1;
+			return 1; //정상저장
 		} catch (Exception e) {
 			return -1;
 		}
