@@ -1,6 +1,7 @@
+
 let index = {
 		init: function(){
-			$("#btn-save").on("click", ()=>{ // function(){} , ()=>{} this를 바인딩하기 위해서!! 
+			$("#btn-save").on("click", ()=>{ // function(){} , ()=>{} this를 바인딩하기 위해서!! /클릭 이벤트가 발생하면 어떤 일이 발생할지 적어줌
 				this.save();
 			});
 			$("#btn-update").on("click", ()=>{ // function(){} , ()=>{} this를 바인딩하기 위해서!! 
@@ -13,10 +14,11 @@ let index = {
 			let data = {
 					username: $("#username").val(),
 					password: $("#password").val(),
-					email: $("#email").val()
+					email: $("#email").val(),
+					//role: $("role").val()
 			};
 			
-			//console.log(data);
+			console.log(data);
 			
 			// ajax호출시 default가 비동기 호출
 			// ajax 통신을 이용해서 3개의 데이터를 json으로 변경하여 insert 요청!!
@@ -68,3 +70,12 @@ let index = {
 }
 
 index.init();
+
+
+
+
+
+
+
+
+

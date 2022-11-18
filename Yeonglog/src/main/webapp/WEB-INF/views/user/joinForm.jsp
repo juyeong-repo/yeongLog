@@ -19,6 +19,14 @@
 			<input type="email" class="form-control" placeholder="Enter email" id="email">
 		</div>
 		
+		
+	<!--권한 설정 (사용자, 관리자) -->
+		<div class="form-group">
+			<label for="role">Role</label> 
+			<input type="role" class="form-control" placeholder="Enter role" id="role">
+		</div>
+	
+		
 	</form>
 	<button id="btn-save" class="btn btn-primary">회원가입완료</button>
 
