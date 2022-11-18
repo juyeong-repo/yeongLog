@@ -15,8 +15,11 @@ import lombok.Getter;
 // 스프링 시큐리티의 고유한 세션저장소에 저장을 해준다.
 @Data
 public class PrincipalDetail implements UserDetails{
-	private User user; // 콤포지션
+	private User user; // composition
 
+	
+	
+	//principal : 접근주체
 	public PrincipalDetail(User user) {
 		this.user = user;
 	}

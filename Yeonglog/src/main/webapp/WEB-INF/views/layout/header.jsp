@@ -37,6 +37,8 @@
 				</c:when>
 				<c:otherwise>
 					<ul class="navbar-nav">
+					<!-- 공지사항은 saveForm에서 클릭시 관리자만 접근하도록 권한 필요, 작성이 아닌 목록 페이지로 이동 -->
+						<li class="nav-item"><a class="nav-link" href="/board/saveForm">공지사항</a></li>
 						<li class="nav-item"><a class="nav-link" href="/board/saveForm">글쓰기</a></li>
 						<li class="nav-item"><a class="nav-link" href="/user/updateForm">회원정보</a></li>
 						<li class="nav-item"><a class="nav-link" href="/logout">로그아웃</a></li>
