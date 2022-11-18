@@ -15,7 +15,7 @@ let index = {
 					username: $("#username").val(),
 					password: $("#password").val(),
 					email: $("#email").val(),
-					//role: $("role").val()
+					role: $("role").val()
 			};
 			
 			console.log(data);
