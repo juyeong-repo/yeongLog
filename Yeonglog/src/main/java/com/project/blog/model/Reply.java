@@ -43,12 +43,28 @@ public class Reply {
 	
 	@CreationTimestamp
 	private LocalDateTime createDate;
+	
+	private int parentNum;
+
+	private int answerNum;
+	
+	private int replyGroup;
 
 	@Override
 	public String toString() {
 		return "Reply [id=" + id + ", content=" + content + ", board=" + board + ", user=" + user + ", createDate="
-				+ createDate + "]";
+				+ createDate + ", parentNum=" + parentNum + ", answerNum=" + answerNum + ", replyGroup=" + replyGroup
+				+ "]";
 	}
+
+	
+	/*
+	 * @Override public String toString() { return "Reply [id=" + id + ", content="
+	 * + content + ", board=" + board + ", user=" + user + ", createDate=" +
+	 * createDate + "]"; }
+	 */
+	
+	
 }
 
 

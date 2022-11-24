@@ -16,7 +16,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.DynamicInsert;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -30,6 +32,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
+@DynamicInsert
 public class Board {
 	
 	@Id
@@ -55,4 +58,13 @@ public class Board {
 	
 	@CreationTimestamp
 	private LocalDateTime createDate;
+	
+	@CreationTimestamp
+	private LocalDateTime updateDate;
+	
+	//공지사항일 경우 N
+	private String replyYn;
+	
+	private int type; //포스트 1, 공지사항 2 
 }
+
