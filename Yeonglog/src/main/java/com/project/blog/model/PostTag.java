@@ -33,16 +33,12 @@ public class PostTag implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-
 	@ManyToOne
-
 	@JoinColumn(name = "postId") 
 	private Board board;
 
 	@Id
-
 	@ManyToOne
-
 	@JoinColumn(name = "tagId")
 	private Tag tag;
 

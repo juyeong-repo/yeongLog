@@ -17,24 +17,25 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
-	// 컨트롤로에서 세션을 어떻게 찾는지?
+	// 컨트롤러에서 세션을 어떻게 찾는지?
 	// @AuthenticationPrincipal PrincipalDetail principal
 	@GetMapping({"", "/"})
-	public String index(Model model, @PageableDefault(size=3, sort="id", direction = Sort.Direction.DESC) Pageable pageable) {  
-		model.addAttribute("boards", boardService.글목록(pageable));
-		return "index"; // viewResolver 작동!!
+	public String index(Model model, @PageableDefault(size=5, sort="id", direction = Sort.Direction.DESC) Pageable pageable) {  
+		model.addAttribute("boards", boardService.postList(pageable));
+		return "index"; // viewResolver 작동
 	}
+	//메인페이지로 갈 때는 인증이 필요 없다. 
 	
 	@GetMapping("/board/{id}")
 	public String findById(@PathVariable int id, Model model) {
-		model.addAttribute("board", boardService.글상세보기(id));
+		model.addAttribute("board", boardService.postDetail(id));
 		
 		return "board/detail";
 	}
 	
 	@GetMapping("/board/{id}/updateForm")
 	public String updateForm(@PathVariable int id, Model model) {
-		model.addAttribute("board", boardService.글상세보기(id));
+		model.addAttribute("board", boardService.postDetail(id));
 		return "board/updateForm";
 	}
 	

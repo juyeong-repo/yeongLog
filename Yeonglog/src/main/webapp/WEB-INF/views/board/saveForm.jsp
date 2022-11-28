@@ -3,16 +3,18 @@
 <%@ include file="../layout/header.jsp"%>
 
 <div class="container">
-
+<!--글쓰기 폼 -->
 	<form>
 		<div class="form-group">
 			<input type="text" class="form-control" placeholder="Enter title" id="title">
 		</div>
 
 		<div class="form-group">
+		<!-- summernote content -->
 			<textarea class="form-control summernote" rows="5" id="content"></textarea>
 		</div>
 	</form>
+	<!-- json으로 요청할 것이므로 form에서 빼기 -->
 	<button id="btn-save" class="btn btn-primary">글쓰기완료</button>
 </div>
 
@@ -22,7 +24,10 @@
     height: 300
   });
 </script>
+
+
 <script src="/js/board.js"></script>
+
 <%@ include file="../layout/footer.jsp"%>
 
 

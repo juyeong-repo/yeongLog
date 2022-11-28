@@ -46,7 +46,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
-			.csrf().disable()  // csrf 토큰 비활성화 (테스트시 걸어두는 게 좋음)
+			.csrf()
+			.disable()  // csrf 토큰 비활성화 (테스트시 걸어두는 게 좋음)
 			.authorizeRequests()
 				.antMatchers("/", "/auth/**", "/js/**", "/css/**", "/image/**", "/dummy/**") 
 				.permitAll()
@@ -58,4 +59,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				.loginProcessingUrl("/auth/loginProc")
 				.defaultSuccessUrl("/"); // 스프링 시큐리티가 해당 주소로 요청오는 로그인을 가로채서 대신 로그인 해준다.
 	}
+	/*
+	 * protected void configure(HttpSecurity http) throws Exception { 
+	 * http
+	 * .csrf().disable() 
+	 * .addFilter(config.corsFilter())
+	 * .sessionManagement()
+	 * .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+	 * .and() 
+	 * .formLogin()
+	 * .disable() 
+	 * .httpBasic()
+	 * .disable() 
+	 * .addFilter(new JwtAuthenticationFilter(authenticationManager() , coredaxService))
+	 * .addFilter(new JwtAuthorizationFilter(authenticationManager(),
+	 * 	userRepository ));
+	 */
+	
+	
 }

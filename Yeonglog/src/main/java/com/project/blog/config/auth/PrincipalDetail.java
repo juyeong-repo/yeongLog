@@ -17,8 +17,6 @@ import lombok.Getter;
 public class PrincipalDetail implements UserDetails{
 	private User user; // composition
 
-	
-	
 	//principal : 접근주체
 	public PrincipalDetail(User user) {
 		this.user = user;
@@ -63,7 +61,11 @@ public class PrincipalDetail implements UserDetails{
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		
 		Collection<GrantedAuthority> collectors = new ArrayList<>();
-		collectors.add(()->{ return "ROLE_"+user.getRole();});
+		collectors.add(
+				()->{ 
+			return "ROLE_"+user.getRole();
+			
+			});
 		
 		return collectors;
 	}

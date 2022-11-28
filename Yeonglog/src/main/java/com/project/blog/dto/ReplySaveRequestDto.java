@@ -10,5 +10,10 @@ import lombok.NoArgsConstructor;
 public class ReplySaveRequestDto {
 	private int userId;
 	private int boardId;
+	private int answerNum;
 	private String content;
+	private int parentNum;
+	private int replyGroup;
+	
+
 }

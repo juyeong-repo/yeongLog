@@ -76,6 +76,8 @@ let index = {
 					userId: $("#userId").val(),
 					boardId: $("#boardId").val(),
 					content: $("#reply-content").val()
+					//answerNum: $(#rep).val()
+					
 			};
 			
 			$.ajax({ 

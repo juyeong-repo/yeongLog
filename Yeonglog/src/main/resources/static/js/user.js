@@ -18,7 +18,6 @@ let index = {
 					email: $("#email").val(),
 					role: $("role").val()
 			};
-			
 			console.log(data);
 			
 			// ajax호출시 default가 비동기 호출
