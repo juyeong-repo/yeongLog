@@ -65,8 +65,12 @@ public class Board {
 	private LocalDateTime updateDate;
 	
 	//공지사항일 경우 N
+	@Column(columnDefinition = "varchar(2) default 'Y'")
 	private String replyYn;
 	
+	@Column(columnDefinition = "int(2) default '1'")
 	private int type; //포스트 1, 공지사항 2 
+	
+	//수정여부 flag 필요시 넣을 것
 }
 

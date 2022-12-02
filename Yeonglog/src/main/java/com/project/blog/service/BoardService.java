@@ -29,6 +29,7 @@ public class BoardService {
 	public void postWrite(Board board, User user) { // title, content
 		board.setCount(0);
 		board.setUser(user);
+		board.setType(1); 
 		boardRepository.save(board);
 	}
 	

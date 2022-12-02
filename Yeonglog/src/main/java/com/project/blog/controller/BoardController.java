@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.project.blog.service.BoardService;
 
-//메인화면, 게시글 상세보기, 게시글 수정/저장하기 
 @Controller
 public class BoardController {
 	
