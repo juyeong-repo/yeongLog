@@ -14,6 +14,7 @@ let index = {
 			});
 		},
 
+//저장버튼, saveform이 들고있는 title과 content를 가져옴
 		save: function(){
 			let data = {
 					title: $("#title").val(),
