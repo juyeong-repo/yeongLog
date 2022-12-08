@@ -20,10 +20,10 @@ let index = {
 					title: $("#title").val(),
 					content: $("#content").val()
 			};
-			
+			//글쓰기 
 			$.ajax({ 
 				type: "POST",
-				url: "/api/board",
+				url: "/api/board", //BoardApiController
 				data: JSON.stringify(data),
 				contentType: "application/json; charset=utf-8",
 				dataType: "json"
