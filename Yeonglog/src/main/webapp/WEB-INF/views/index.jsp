@@ -4,10 +4,10 @@
 
 <div class="container">
 
-<c:forEach var="board" items="${boards.content}">
+<c:forEach var="board" items="${boards.content}"> <!--BoardController의 index함수에서 모델에 담긴 값. 모델에 데이터 넣으면 화면까지 끌고감 -->
 	<div class="card m-2">
 		<div class="card-body">
-			<h4 class="card-title">${board.title}</h4>
+			<h4 class="card-title">${board.title}</h4> <!--컨트롤러 - 서비스 - 레포지토리 - board 모델  -->
 			<a href="/board/${board.id}" class="btn btn-primary">상세보기</a>
 		</div>
 	</div>

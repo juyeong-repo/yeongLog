@@ -11,18 +11,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.project.blog.service.BoardService;
 
-@Controller
+@Controller //컨트롤러는 리턴 시 viewResolver 작동
 public class BoardController {
 	
 	@Autowired
 	private BoardService boardService;
 	
+	
 	// 컨트롤러에서 세션을 어떻게 찾는지?
 	// @AuthenticationPrincipal PrincipalDetail principal
 	@GetMapping({"", "/"})
 	public String index(Model model, @PageableDefault(size=5, sort="id", direction = Sort.Direction.DESC) Pageable pageable) {  
-		model.addAttribute("boards", boardService.postList(pageable));
-		return "index"; // viewResolver 작동
+		model.addAttribute("boards", boardService.postList(pageable)); //데이터를 가져갈 때 model 필요
+		return "index"; // viewResolver 작동 _ prefix, surfix 
+		
+	
 	}
 	//메인페이지로 갈 때는 인증이 필요 없다. 
 	
