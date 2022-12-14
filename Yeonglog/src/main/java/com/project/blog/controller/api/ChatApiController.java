@@ -1,6 +1,8 @@
 package com.project.blog.controller.api;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.project.blog.exception.YeongLogException;
 
@@ -35,10 +37,11 @@ public class ChatApiController {
 	private static final Logger log = LoggerFactory.getLogger(ChatApiController.class);
 	
     private static String secretKey = "Q0hHekJOZVhMcGZ1aFdhemF3a3htV1BVeE1wTlpDTkg=";
-    private static String apiUrl = "Q0hHekJOZVhMcGZ1aFdhemF3a3htV1BVeE1wTlpDTkg=";
+    private static String apiUrl = "https://r1qcwstr4q.apigw.ntruss.com/custom/v1/8653/d743a2cd80fab02b7a0e4ab620b7b7941e08384211afd0ceca756d58493d5c35";
     
-    @MessageMapping("/sendMessage")
-    @SendTo("/topic/public")
+      @MessageMapping("/sendMessage")
+      @SendTo("/topic/public")
+   // @RequestMapping(value="/test", method = RequestMethod.GET)
     public String sendMessage (@Payload String chatMessage) throws IOException {
     	
     	URL url = new URL(apiUrl);

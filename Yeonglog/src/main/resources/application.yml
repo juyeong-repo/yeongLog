@@ -2,6 +2,10 @@ server:
   port: 8000
   servlet:
     context-path: /
+  error:
+    include-exception: true
+    include-stacktrace: always
+    
     
 spring:
   mvc:
@@ -37,4 +41,4 @@ spring:
       force: true
 
 cos:
-  key: cos1234
+  key: 
